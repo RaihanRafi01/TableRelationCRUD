@@ -1,0 +1,38 @@
+﻿@using TableRelationCRUD.Models;
+
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+<table border="1" class="table">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Quantity</td>
+            <td>Category</td>
+            <td>Oder Id</td>
+            <td>Edit / Delete</td>
+
+
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Product_Name</td>
+            <td>@item.Product_Qty</td>
+            <td>@item.Category.Category_Name</td>
+            <td>@item.Order_Id</td>
+
+
+
+            <td><a href="/Product/Edit/@item.Id">Edit </a> <a href="/Product/Delete/@item.Id"> Delete</a> </td>
+        </tr>
+    }
+</table>
+
